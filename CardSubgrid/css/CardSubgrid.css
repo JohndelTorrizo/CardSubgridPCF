@@ -1,0 +1,63 @@
+/* Container for all the cards */
+.card-container {
+    display: flex;
+    flex-direction: column; /* Stacks the cards vertically */
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    
+    /* Required for Infinite Scroll to work */
+    height: 100%; 
+    max-height: 80vh; 
+    overflow-y: auto; 
+    
+    box-sizing: border-box;
+}
+
+/* Individual Card Styling */
+.dataset-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 5px;
+    width: 100%; /* Spans the full width of the container */
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.dataset-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Row inside the card (Column Name & Value) */
+.card-data-row {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-data-row:last-child {
+    border-bottom: none;
+}
+
+/* The Column Name */
+.card-label {
+    font-size: 12px;
+    color: #605e5c;
+    font-weight: 600;
+    flex: 2;
+    padding-right: 10px;
+}
+
+/* The Column Value */
+.card-value {
+    font-size: 14px;
+    color: #323130;
+    flex: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
