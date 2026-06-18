@@ -1,16 +1,13 @@
 /* Container for all the cards */
 .card-container {
     display: flex;
-    flex-direction: column; /* Stacks the cards vertically */
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
     padding: 10px;
     width: 100%;
-    
-    /* Required for Infinite Scroll to work */
     height: 100%; 
     max-height: 80vh; 
     overflow-y: auto; 
-    
     box-sizing: border-box;
 }
 
@@ -19,45 +16,52 @@
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    padding: 5px;
-    width: 100%; /* Spans the full width of the container */
+    padding: 10px; 
+    width: 100%;
     box-sizing: border-box;
+
+    box-shadow: 0 1.6px 3.6px rgba(0,0,0,0.13), 0 0.3px 0.9px rgba(0,0,0,0.1);
     transition: box-shadow 0.2s ease-in-out;
 }
 
-.dataset-card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Row inside the card (Column Name & Value) */
+/* Row inside the card */
 .card-data-row {
     display: flex;
-    align-items: center;
-    padding: 5px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.card-data-row:last-child {
-    border-bottom: none;
+    align-items: center; /* Vertically aligns label and value */
+    padding: 8px 0;
+    width: 100%; /* Ensures the row takes full width */
+    min-height: 40px;
+    box-sizing: border-box;
 }
 
 /* The Column Name */
 .card-label {
-    font-size: 12px;
+    font-size: 13px;
     color: #605e5c;
-    font-weight: 600;
-    flex: 2;
-    padding-right: 10px;
+    font-weight: 400;
+    
+    /* Layout */
+    flex: 0 0 160px;
+    padding-right: 20px;
+    text-align: left; 
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    line-clamp: 2;
 }
 
 /* The Column Value */
 .card-value {
     font-size: 14px;
     color: #323130;
-    flex: 2;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1; 
+    background-color: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    text-align: left; 
 }
